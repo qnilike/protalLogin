@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>login</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div class="w">
+        <img src="img/login-bg.png" alt="" class="w">
+    </div>
+    <div class="login pa w">
+        <!-- 用户第一次登陆 s-->
+        <div class="login-con f-login">
+            <div class="login-input border-b pr">
+                <input type="number" class="teleInput h" oninput="if(value.length>11) value=value.slice(0,11)" placeholder="请输入手机号" v-model="{{telephone}}">
+            </div>
+            <div class="login-input pr border-b">
+                <input type="number" class="codeInput h" placeholder="验证码" oninput="if(value.length>4) value=value.slice(0,4)">
+                <span class="codeBtn tc pa dib" id="codeBtn">发送验证码</span>
+            </div>
+            <div class="wifi-clause clearfix">
+                <input id="wifiClause" class="none" type="checkbox" name="wifiClause">
+                <label class="wifiChecked dib fl" for="wifiClause"></label>
+                <span class="fl">无线网络条款</span>
+            </div>
+            <div class="loginBtn pr">
+                <input type="button" value="登 录" disabled="disabled">
+            </div>
+            <div class="errorInfo hidden tc">
+                验证码有误，请重新输入
+            </div>
+            <div class="wxLogin-icon tr">
+                <img src="img/wxIcon.png" alt="" class="va-m"> 微信登录
+            </div>
+        </div>
+        <!-- 用户第一次登陆 e-->
+        <!-- 用户非第一次登陆 s-->
+        <div class="login-con s-login none">
+            <div class="login-input border-b pr">
+                <input type="number" class="teleInput h" oninput="if(value.length>11) value=value.slice(0,11)" placeholder="请输入手机号" v-model="{{telephone}}">
+            </div>
+            <div class="tr f24 change-tele">
+                修改手机号码
+            </div>
+            <div class="loginBtn">
+                <input type="button" value="登 录" disabled="disabled">
+            </div>
+            <div class="wxLogin-icon tr wxLogin-other">
+                <img src="img/wxIcon.png" alt="" class="va-m"> 微信登录
+            </div>
+        </div>   
+        <!-- 用户非第一次登陆 e-->
+        <!-- 微信登录 s-->
+        <div class="login-con none" id="wxLogin">
+            <div class="loginBtn">
+                <input type="button" class="wxlogin-btn" value="微信一键登陆">
+            </div>
+            <div class="tr tele-login">
+                <img src="img/teleIcon.png" alt="" class="va-m"> 手机号登录
+            </div>
+        </div>
+        <!-- 微信登录 e-->
+    </div>
+    <div class="footer pf w">
+        <div class="foot-left">
+            <img src="img/hospitalIcon.png" alt="" class="db">
+            <div class="hospital-name"> 广州市第一人民医院</div>
+        </div>
+        <div class="foot-right">
+            <img src="img/hospitalTele.png" alt="" class="db">
+            <div class="hospitalTele">
+                <p>佑康无线</p>
+                <p>400 6500 311</p>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/fontSize.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
